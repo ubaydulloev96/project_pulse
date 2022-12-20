@@ -12,6 +12,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        &-heart {
+            animation-name: heartbeat;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
     }
     &__subtitle {
         color: $second-color;

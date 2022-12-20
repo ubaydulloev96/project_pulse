@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <div class="promo">
+    <div id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="header__contacts">
                     <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-                    <button class="button">заказать звонок</button>
+                    <button data-modal="consultation" class="button">заказать звонок</button>
                 </div>
             </header>
 
@@ -32,23 +32,23 @@
                 <h2 class="promo__subheader">с учётом Вашего уровня подготовки</h2>
                 <div class="promo__icons">
                     <div class="promo__icon">
-                        <img src="icons/main_screen/watch.png" alt="watch">
+                        <img src="icons/main-screen/carry.png" alt="watch">
                         Время подбора: 
                         10 минут
                     </div>
                     <div class="promo__icon">
-                        <img src="icons/main_screen/carry.png" alt="carry">
+                        <img src="icons/main-screen/carry.png" alt="carry">
                         Бесплатная 
                         доставка
                     </div>
                     <div class="promo__icon">
-                        <img src="icons/main_screen/message.png" alt="message">
+                        <img src="icons/main-screen/message.png" alt="message">
                         Ответим
                         на все вопросы
                     </div>
                 </div>
 
-                <button class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
+                <button data-modal="consultation" class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
                 <div class="promo__link">
                     или
                     <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="advantages__block">
-                        <img src="icons/second-screen/heart.png" alt="heart">
+                        <img src="icons/second-screen/heart.png" alt="heart" class="advantages__block-heart">
                         <div class="advantages__subtitle">Заботимся о здоровье</div>
                         <div class="advantages__descr">
                             Мы работаем для того, чтобы Ваши занятия спортом шли 
@@ -103,9 +103,9 @@
             <div class="consultation__descr">
                 Просто заполните форму заявки <br> и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" required type="text" placeholder="Ваше имя">
-                <input name="phone" required type="number" placeholder="Ваш телефон">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required type="email" placeholder="Ваш E-mail">
 
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
@@ -436,9 +436,52 @@
         </div>
     </footer>
 
+    <div class="overlay">
+        <div class="modal" id="consultation">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Просто заполните форму заявки</div>
+            <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
+            <form class="feed-form feed-form_mt25" action="#">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
+
+                <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
+            </form>
+        </div>
+
+        <div class="modal" id="order">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Ваш заказ:</div>
+            <div class="modal__descr">Пульсометр Polar FT1</div>
+            <form class="feed-form feed-form_mt25" action="#">
+                <input name="name" required type="text" placeholder="Ваше имя">
+                <input name="phone" required placeholder="Ваш телефон">
+                <input name="email" required type="email" placeholder="Ваш E-mail">
+
+                <button class="button button_submit">Купить</button>
+            </form>
+        </div>
+
+        <div class="modal modal__mini" id="thanks">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Спасибо за вашу заявку!</div>
+            <div class="modal__descr">
+                Наш менеджер свяжется с вами 
+                в ближайшее время!
+            </div>
+        </div>
+    </div>
+
+    <a href="#up" class="pageup">
+        <img src="icons/circle-chevron-up-solid.svg" alt="up">
+    </a>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
